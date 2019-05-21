@@ -14,6 +14,7 @@ Made by:
                                                      
 "
 Pause
+clear
 
 echo "This file NEEDS to be placed within your Skyrim Directory with TESV.exe or SkyrimSE.exe."
 echo "It will delete the following files and folders, you will NOT be able to retrieve them."
