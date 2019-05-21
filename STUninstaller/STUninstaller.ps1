@@ -1,4 +1,4 @@
-Echo "
+Write-Output "
 SkyrimTogether uninstallation tool.
 
 Made by:
@@ -14,46 +14,46 @@ Made by:
                                                      
 "
 Pause
-clear
+Clear-Host
 
-echo "This file NEEDS to be placed within your Skyrim Directory with TESV.exe or SkyrimSE.exe."
-echo "It will delete the following files and folders, you will NOT be able to retrieve them."
-echo " "
-echo "\Data\meshes\Interface\logo\logo.nif"
-echo "\Data\Online"
-echo "\locales"
-echo "\swiftshader"
-echo "cef.pak"
-echo "cef_100_percent.pak"
-echo "cef_200_percent.pak"
-echo "cef_extensions.pak"
-echo "chrome_elf.dll "
-echo "d3dcompiler_43.dll"
-echo "d3dcompiler_47.dll"
-echo "devtools_resources.pak"
-echo "icudtl.dat"
-echo "libcef.dll"
-echo "libEGL.dll"
-echo "libGLESv2.dll"
-echo "natives_blob.bin"
-echo "SkyrimTogether_r.dll"
-echo "snapshot_blob.bin"
-echo "st_loader_r.exe"
-echo "st_process_r.exe"
-echo "v8_context_snapshot.bin"
-echo "\logs"
-echo "\cache"
-echo "\x64"
-echo "\x32"
-echo "\x86"
-echo "\lex"
-echo "\server"
-echo " "
-echo "This file NEEDS to be placed within your Skyrim Directory with TESV.exe or SkyrimSE.exe."
-echo "It will delete the entirety of the previous list of files and folders, you will NOT be able to retrieve them."
-echo ""
+Write-Output "This file NEEDS to be placed within your Skyrim Directory with TESV.exe or SkyrimSE.exe."
+Write-Output "It will delete the following files and folders, you will NOT be able to retrieve them."
+Write-Output " "
+Write-Output "\Data\meshes\Interface\logo\logo.nif"
+Write-Output "\Data\Online"
+Write-Output "\locales"
+Write-Output "\swiftshader"
+Write-Output "cef.pak"
+Write-Output "cef_100_percent.pak"
+Write-Output "cef_200_percent.pak"
+Write-Output "cef_extensions.pak"
+Write-Output "chrome_elf.dll "
+Write-Output "d3dcompiler_43.dll"
+Write-Output "d3dcompiler_47.dll"
+Write-Output "devtools_resources.pak"
+Write-Output "icudtl.dat"
+Write-Output "libcef.dll"
+Write-Output "libEGL.dll"
+Write-Output "libGLESv2.dll"
+Write-Output "natives_blob.bin"
+Write-Output "SkyrimTogether_r.dll"
+Write-Output "snapshot_blob.bin"
+Write-Output "st_loader_r.exe"
+Write-Output "st_process_r.exe"
+Write-Output "v8_context_snapshot.bin"
+Write-Output "\logs"
+Write-Output "\cache"
+Write-Output "\x64"
+Write-Output "\x32"
+Write-Output "\x86"
+Write-Output "\lex"
+Write-Output "\server"
+Write-Output " "
+Write-Output "This file NEEDS to be placed within your Skyrim Directory with TESV.exe or SkyrimSE.exe."
+Write-Output "It will delete the entirety of the previous list of files and folders, you will NOT be able to retrieve them."
+Write-Output ""
 pause
-clear
+Clear-Host
 
 Remove-Item "Data\Online" -Recurse
 Remove-Item "locales" -Recurse
@@ -80,19 +80,21 @@ Remove-Item "logs" -Recurse
 Remove-Item "cache" -Recurse
 Remove-Item "server" -Recurse
 
+Clear-Host
+
 $input = read-host "Do you want to remove the SkyrimTogether Logo? Yes or No  (Default: Yes)"
 if ($input -eq 'yes'){
-    echo "Removing logo..."
+    Write-Output "Removing logo..."
     Remove-Item "Data\meshes\Interface\logo\logo.nif" 
-    echo "Done!"
+    Write-Output "Done!"
 }elseif($input -eq 'no'){
-    echo "The logo wont be removed"
+    Write-Output "The logo wont be removed"
 }else{
-    echo "Removing logo..."
+    Write-Output "Removing logo..."
     Remove-Item "Data\meshes\Interface\logo\logo.nif" 
-    echo "Done!"
+    Write-Output "Done!"
     }
-echo " "
-echo "SkyrimTogether has been uninstalled!"
+Write-Output " "
+Write-Output "SkyrimTogether has been uninstalled!"
 pause
 

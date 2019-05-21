@@ -32,11 +32,11 @@ function DownloadFile($url, $targetFile)
 
        $downloadedBytes = $downloadedBytes + $count
 
-       Write-Progress -activity "Downloading file '$($url.split('/') | Select -Last 1)'" -status "Downloaded ($([System.Math]::Floor($downloadedBytes/1024))K of $($totalLength)K): " -PercentComplete ((([System.Math]::Floor($downloadedBytes/1024)) / $totalLength)  * 100)
+       Write-Progress -activity "Downloading file '$($url.split('/') | Select-Object -Last 1)'" -status "Downloaded ($([System.Math]::Floor($downloadedBytes/1024))K of $($totalLength)K): " -PercentComplete ((([System.Math]::Floor($downloadedBytes/1024)) / $totalLength)  * 100)
 
    }
 
-   Write-Progress -activity "Finished downloading file '$($url.split('/') | Select -Last 1)'"
+   Write-Progress -activity "Finished downloading file '$($url.split('/') | Select-Object -Last 1)'"
 
    $targetStream.Flush()
 
@@ -48,7 +48,7 @@ function DownloadFile($url, $targetFile)
 
 }
 
-Echo "
+Write-Output "
 A SkyrimTogether auto installation tool.
 
 Made by:
@@ -65,7 +65,7 @@ Made by:
 "
 pause
 New-Item -Path 'C:\SkyrimTogether' -ItemType Directory
-clear
+Clear-Host
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 downloadFile "https://github.com/SkyrimTogether/issues-launcher/releases/download/v1.0.5/Harbor-1.0.5.exe" "C:\SkyrimTogether\Harbor-1.0.5.exe"
@@ -76,18 +76,18 @@ downloadFile "https://github.com/cikeZ00/STInstaller/raw/master/Server_r.exe" "C
 $pathvargs = {C:\SkyrimTogether\Harbor-1.0.5.exe /S /v/qn }
 Invoke-Command -ScriptBlock $pathvargs
 
-Echo "Installation complete!"
+Write-Output "Installation complete!"
 
 $input = read-host "Do you want to start the server? Yes or No"
 if ($input -eq 'yes'){
     Start-Process -FilePath "C:\SkyrimTogether\Server_r.exe"
 }elseif($input -eq 'no'){
-    Echo "Alright, the server should be located in skyrim/server when you install ST"
+    Write-Output "Alright, the server should be located in skyrim/server when you install ST"
 }else{
     Write-Output "k"
     }
 
 pause
-Echo "Starting Harbor"
+Write-Output "Starting Harbor"
 Start-Process -FilePath "C:\Program Files (x86)\Tilted` Phoques\Harbor\Harbor.exe"
 
