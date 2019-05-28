@@ -68,26 +68,25 @@ New-Item -Path 'C:\SkyrimTogether' -ItemType Directory
 Clear-Host
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-downloadFile "https://github.com/SkyrimTogether/issues-launcher/releases/download/v1.0.5/Harbor-1.0.5.exe" "C:\SkyrimTogether\Harbor-1.0.5.exe"
+downloadFile "https://github.com/SkyrimTogether/issues-launcher/releases/download/v1.0.6/Harbor-1.0.6.exe" "C:\SkyrimTogether\Harbor-1.0.6.exe"
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-downloadFile "https://github.com/cikeZ00/STInstaller/raw/master/Server_r.exe" "C:\SkyrimTogether\Server_r.exe"
+downloadFile "https://github.com/cikeZ00/STInstaller/raw/master/Server.exe" "C:\SkyrimTogether\Server.exe"
 
-$pathvargs = {C:\SkyrimTogether\Harbor-1.0.5.exe /S /v/qn }
+$pathvargs = {C:\SkyrimTogether\Harbor-1.0.6.exe /S /v/qn }
 Invoke-Command -ScriptBlock $pathvargs
 
 Write-Output "Installation complete!"
 
-$input = read-host "Do you want to start the server? Yes or No"
+$input = read-host "Do you want to start the server? Yes or No (Default: Yes)"
 if ($input -eq 'yes'){
-    Start-Process -FilePath "C:\SkyrimTogether\Server_r.exe"
+    Start-Process -FilePath "C:\SkyrimTogether\Server.exe"
 }elseif($input -eq 'no'){
     Write-Output "Alright, the server should be located in skyrim/server when you install ST"
 }else{
-    Write-Output "k"
+    Start-Process -FilePath "C:\SkyrimTogether\Server.exe"
     }
 
 pause
 Write-Output "Starting Harbor"
 Start-Process -FilePath "C:\Program Files (x86)\Tilted` Phoques\Harbor\Harbor.exe"
-
