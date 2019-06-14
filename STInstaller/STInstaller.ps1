@@ -16,7 +16,7 @@ function DownloadFile($url, $targetFile)
 
    $targetStream = New-Object -TypeName System.IO.FileStream -ArgumentList $targetFile, Create
 
-   $buffer = new-object byte[] 10KB
+   $buffer = new-object byte[] 3MB
 
    $count = $responseStream.Read($buffer,0,$buffer.length)
 
@@ -83,6 +83,7 @@ if ($input -eq 'yes'){
     Start-Process -FilePath "C:\SkyrimTogether\Server.exe"
 }elseif($input -eq 'no'){
     Write-Output "Alright, the server should be located in skyrim/server when you install ST"
+    Remove-Item "C:\SkyrimTogether\Server.exe"
 }else{
     Start-Process -FilePath "C:\SkyrimTogether\Server.exe"
     }
