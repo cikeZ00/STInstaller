@@ -87,7 +87,8 @@ if ($input -eq 'yes'){
 }else{
     Start-Process -FilePath "C:\SkyrimTogether\Server.exe"
     }
+Start-Sleep 4
+Clear-Host
 
-pause
 Write-Output "Starting Harbor"
 Start-Process -FilePath "C:\Program Files (x86)\Tilted` Phoques\Harbor\Harbor.exe"
