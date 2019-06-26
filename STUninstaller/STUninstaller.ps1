@@ -93,6 +93,8 @@ if ($input -eq 'yes'){
     Write-Output "Removing logo..."
     Remove-Item "Data\meshes\Interface\logo\logo.nif" 
     Write-Output "Done!"
+    Start-Sleep 3
+    Clear-Host
     }
 Write-Output " "
 Write-Output "SkyrimTogether has been uninstalled!"
