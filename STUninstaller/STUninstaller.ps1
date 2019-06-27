@@ -13,7 +13,8 @@ Made by:
 
                                                      
 "
-Pause
+Write-Output "Press any key to continue..."
+[void][System.Console]::ReadKey($true)
 Clear-Host
 
 Write-Output "This file NEEDS to be placed within your Skyrim Directory with TESV.exe or SkyrimSE.exe."
@@ -52,7 +53,8 @@ Write-Output " "
 Write-Output "This file NEEDS to be placed within your Skyrim Directory with TESV.exe or SkyrimSE.exe."
 Write-Output "It will delete the entirety of the previous list of files and folders, you will NOT be able to retrieve them."
 Write-Output ""
-pause
+Write-Output "Press any key to continue..."
+[void][System.Console]::ReadKey($true)
 Clear-Host
 
 Remove-Item "Data\Online" -Recurse
@@ -79,7 +81,8 @@ Remove-Item "v8_context_snapshot.bin"
 Remove-Item "logs" -Recurse 
 Remove-Item "cache" -Recurse
 Remove-Item "server" -Recurse
-
+Write-Output "Press any key to continue..."
+[void][System.Console]::ReadKey($true)
 Clear-Host
 
 $input = read-host "Do you want to remove the SkyrimTogether Logo? Yes or No  (Default: Yes)"
@@ -98,5 +101,6 @@ if ($input -eq 'yes'){
     }
 Write-Output " "
 Write-Output "SkyrimTogether has been uninstalled!"
-pause
+Write-Output "Press any key to end..."
+[void][System.Console]::ReadKey($true)
 
