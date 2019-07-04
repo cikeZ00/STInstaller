@@ -63,7 +63,9 @@ Made by:
 
                                                      
 "
-pause
+Write-Output "Press any key to continue..."
+[void][System.Console]::ReadKey($true)
+
 New-Item -Path 'C:\SkyrimTogether' -ItemType Directory
 Clear-Host
 
@@ -90,5 +92,5 @@ if ($input -eq 'yes'){
 Start-Sleep 4
 Clear-Host
 
-Write-Output "Starting Harbor"
+Write-Output "Starting Harbor..."
 Start-Process -FilePath "C:\Program Files (x86)\Tilted` Phoques\Harbor\Harbor.exe"
