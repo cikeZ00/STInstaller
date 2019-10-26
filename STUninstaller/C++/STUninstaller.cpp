@@ -36,5 +36,6 @@ int main() {
 		cout << "Failed!";
 	}
 	cin.get();
+	cout << "Press any button to continu..";
 	return 0;
 }
